@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>class 4</title>
+</head>
+<body >
+	<canvas id="myCanvas" width="400" height="300">您的浏览器不支持canvas</canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById('myCanvas');
+		if(canvas && canvas.getContext){
+			var ctx = canvas.getContext('2d');
+			//var grad = ctx.createLinearGradient(0,0,300,0);
+			var grad = ctx.createRadialGradient(200,200,50,200,200,200);
+			grad.addColorStop(0,"#f00");
+			grad.addColorStop(1,"#00f");
+			ctx.fillStyle=grad;
+			ctx.fillRect(0,0,400,400);
+		}
+	</script>
+</body>
+</html>

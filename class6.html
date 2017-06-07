@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>class 5 使用图形</title>
+	</head>
+	<body>
+			<canvas id="myCanvas" width="400" height="400">您的浏览器不支持canvas</canvas>
+			<script type="text/javascript">
+						var canvas = document.getElementById('myCanvas');
+						var ctx = canvas.getContext('2d');
+						var img = new Image();
+						// img.src = "study.png";
+						// img.onload = function(){
+						// 	ctx.drawImage(img,0,0);
+						// }
+						// img.src = "study2.png";
+						// img.onload = function(){
+						// 	var ptrn = ctx.createPattern(img,"repeat");
+						// 	ctx.fillStyle = ptrn;
+						// 	ctx.fillRect(0,0,600,600);
+						// }
+
+						// img.src = "study.png";
+						// img.onload = function(){
+						// 	ctx.drawImage(img,350,250,200,200,0,0,100,100)
+						// }  //剪裁图像
+
+						img.src = "study.png";
+						img.onload = function(){
+							ctx.drawImage(img, 0, 0);
+							var imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
+							for (var i = 0; i < imageData.data.length; i+=4) {
+								imageData.data[i] = 255 - imageData.data[i];
+								imageData.data[i+1] = 255 - imageData.data[i+1];
+								imageData.data[i+2] = 255 - imageData.data[i+2];
+								imageData.data[i+3] = 255;
+							}
+
+							ctx.putImageData(imageData,0,0);
+						}  //像素级操作  
+
+			</script>
+	</body>
+</html>

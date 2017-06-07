@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> class 3 </title>
+	</head>
+	<body>
+		<canvas id="myCanvas">您的浏览器不支持canvas标签</canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById("myCanvas");
+			if ( canvas && canvas.getContext) {
+				var ctx = canvas.getContext("2d");
+				ctx.beginPath();
+				//ctx.moveTo(100,50);  //二次曲线			
+				//ctx.quadraticCurveTo(100,15,300,30); 绘制二次曲线
+				// ctx.moveTo(50,200); //贝塞尔曲线
+				// ctx.bezierCurveTo(50,100,200,100,200,150); //贝塞尔曲线
+				//ctx.arc(100,75,50,0,2*Math.PI); //绘制圆弧
+				// ctx.moveTo(0,10);   //四边形
+				// ctx.lineTo(200,20);
+				// ctx.lineTo(280,100);
+				// ctx.lineTo(80,70);
+
+				//ctx.moveTo(10,10)
+				// ctx.lineTo(10,110);//ctx.lineTo(10,110);
+				// ctx.lineTo(110,110);
+				// ctx.lineTo(110,10);
+			 //    ctx.closePath();
+
+			 	// ctx.arcTo(10,10,10,20,10);
+			 	// ctx.arcTo(10,110,10,120,10);
+			 	//ctx.moveTo(100,50);
+
+			 	ctx.arc(100,75,50,0,2*Math.PI);
+			 	ctx.moveTo(130,75);
+			 	ctx.arc(100,75,30,0,Math.PI);
+			 	ctx.moveTo(85,55);
+			 	ctx.arc(80,55,5,0,2*Math.PI);
+			 	ctx.moveTo(125,55)
+			 	ctx.arc(120,55,5,0,2*Math.PI);
+
+				ctx.stroke();
+			}
+		</script>
+	</body>
+</html>

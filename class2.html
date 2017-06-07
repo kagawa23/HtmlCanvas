@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<meta chatset="utf-8">
+		<title>class 2</title>
+	</head>
+	<body>
+		<canvas id="myCanvas">您的浏览器不支持canvas标签</canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			ctx.beginPath();
+			ctx.moveTo(10,10);
+			ctx.lineTo(200,10);
+			ctx.stroke();
+			ctx.closePath();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>class 7 绘制文字</title>
+	</head>
+	<body>
+	 <canvas id="myCanvas" width="1000" height="400">您的浏览器不支持canvas</canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+			//单色字体
+			ctx.font="italic small-caps bold 50px Arial";
+			ctx.fillText("Hello! Canvas", 10,50);
+
+			//创建渐变字体
+			ctx.font = "50px Verdana"
+			var gradient = ctx.createLinearGradient(0,0,canvas.width,0);
+		//	var gradient = ctx.createRadialGradient(50,100,50,50,100,200);
+
+			gradient.addColorStop("0","magenta");
+			gradient.addColorStop("0.5","blue");
+			gradient.addColorStop("1.0","red");
+		//	ctx.fillStyle = gradient;
+			ctx.strokeStyle = gradient;
+		//	ctx.fillText("Hello! Canvas", 10,90);
+			ctx.strokeText("Hello! Canvas", 10,90);
+
+
+
+		</script>
+	</body>
+</html>
